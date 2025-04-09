@@ -27,22 +27,41 @@ function loadIMA() {
 }
 
 
+// function getOrCreateDiv(id) {
+//   let ele = document.getElementById(id);
+//   if (ele) return ele;
+//   ele = document.createElement('div')
+//   ele.id = id;
+//   document.body.appendChild(ele)
+//   return ele;
+// }
+
+// function getOrCreateVideo(id, src) {
+//   let ele = document.getElementById(id);
+//   if (ele) return ele;
+//   ele = document.createElement('video')
+//   ele.src = src
+//   ele.id = id;
+//   document.body.appendChild(ele)
+//   return ele;
+// }
+
 function getOrCreateDiv(id) {
   let ele = document.getElementById(id);
   if (ele) return ele;
-  ele = document.createElement('div')
+  ele = document.createElement('div');
   ele.id = id;
-  document.body.appendChild(ele)
+  document.body.insertBefore(ele, document.body.firstChild);
   return ele;
 }
 
 function getOrCreateVideo(id, src) {
   let ele = document.getElementById(id);
   if (ele) return ele;
-  ele = document.createElement('video')
-  ele.src = src
+  ele = document.createElement('video');
+  ele.src = src;
   ele.id = id;
-  document.body.appendChild(ele)
+  document.body.insertBefore(ele, document.body.firstChild);
   return ele;
 }
 
