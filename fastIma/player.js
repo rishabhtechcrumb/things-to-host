@@ -69,7 +69,7 @@ function getOrCreateVideo(id, src) {
  * Initializes IMA setup.
  */
 async function init() {
-
+  console.log(`TC_PERF:: ${performance.now() - window.TC_PERF.tagStartTime} IMAPlayer`);
   videoContent = getOrCreateVideo('contentElement', '');
   adDisplayContainer = getOrCreateDiv('adContainer');
   // playButton = get('playButton');
@@ -125,6 +125,7 @@ function requestAd() {
   adsRequest.nonLinearAdSlotHeight = 150;
 
   adsLoader.requestAds(adsRequest);
+  console.log(`TC_PERF:: ${performance.now() - window.TC_PERF.tagStartTime} Adrequested`);
 }
 
 /**
@@ -197,6 +198,7 @@ function onAdEvent(adEvent) {
   const ad = adEvent.getAd();
   switch (adEvent.type) {
     case google.ima.AdEvent.Type.LOADED:
+      console.log(`TC_PERF:: ${performance.now() - window.TC_PERF.tagStartTime} Ad Loaded`);
       // This is the first event sent for an ad - it is possible to
       // determine whether the ad is a video ad or an overlay.
       if (!ad.isLinear()) {
