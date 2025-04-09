@@ -5,5 +5,5 @@ function loadScriptTag(src, onload = () => { }, onError = () => { }) {
   document.head.appendChild(srciptTag)
 }
 loadScriptTag("https://imasdk.googleapis.com/js/sdkloader/ima3.js")
-loadScriptTag("https://cdn.jsdelivr.net/gh/rishabhtechcrumb/things-to-host@refs/heads/master/fastIma/player.js")
+loadScriptTag("https://cdn.jsdelivr.net/gh/rishabhtechcrumb/things-to-host@master/fastIma/player.js")
 
